@@ -1,0 +1,8 @@
+1) Run wav_preprocessing.py on record2.wav;
+2) Run python subprocess script 'pocketsphinx_continuous ...' on record2_mono.wav;
+3) Run volume_graph_time_Fs.py to get volume data;
+4) Run volume_root_mean_square_word.py for the root mean squared volume of each word;
+5) Run audio_chop_by_word.py to get audio data of each word separately;
+6) Get 'voice stress' of each audio sample of each word; map to gradient value 0.0-1.0, and output ....
+
+** Side note: Jiachen doing emotion detection w/ full word; need to discuss how we are mapping to colour..
