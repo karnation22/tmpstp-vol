@@ -7,11 +7,7 @@ ifdef pip
 else
 	@echo 'skipping over the pip install; please ensure you have the relevant dependencies installed..'
 endif
-	@echo 'found a wav - noted below'
-	@echo $(wav)
-	@echo $(subst .wav,, $(wav))
 	$(eval stem = $(subst .wav,, $(wav)))
-	@echo $(stem)
 	python wav_preprocessing.py $(wav)
 	pocketsphinx_continuous -infile $(stem)_mono.wav -time yes > $(stem)textDump.txt
 	python volume_graph_time_Fs.py $(stem)_mono.wav
